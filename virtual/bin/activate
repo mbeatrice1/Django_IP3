@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/bea/Documents/Python/IPS/Django/IP3/virtual"
+VIRTUAL_ENV="/home/bea/Documents/Python/IPS/Django_Framework_projects/IP3/virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

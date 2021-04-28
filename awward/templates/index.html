@@ -1,0 +1,62 @@
+{%extends 'all-apps/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+
+
+
+<div
+  style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREw_PA3H4ieVLbnxMsEjW3bP6GawjDKHApog&usqp=CAU);background-size: cover;background-repeat:no-repeat;height:400px">
+  <!-- <h1 style="text-align: center">AWWARDS</h1> -->
+  <!-- <h1 style="font-family: 'Staatliches', cursive;color:white;padding:10%;text-align: center">****Rate Projects****</h1> -->
+</div><br><br><br>
+
+
+
+<div class="row masonry-container" style="font-family: 'Staatliches', cursive">
+  <h1 style="font-family: serif;text-align: center">Read and Rate the Projects</h1><br><br>
+
+  {%for p in projects%}
+  <div class="item col-md-4">
+
+    <div class="well well-sm" style="background-color: gray; ">
+
+      <div class="thumbnail" style="background-color:white">
+
+
+
+        <p>{{p.title}}</p>
+        <img src="{{p.project_image.url}}" class=" img-responsive" alt="">
+
+        <p>{{p.description}}</p>
+
+        <a href="{{p.link}}"><strong>click to view the site</strong></a><p></p>
+
+        <a href="{% url 'rating' id=p.id %}" data-toggle="modal" data-target="#{{p.id}}">Rate</a>
+        <p><strong>design : </strong>{{p.design}}</p>
+        <p><strong>usability : </strong>{{p.usability}}</p>
+        <p><strong>content : </strong>{{p.content}}</p>
+        <!-- <p>By <span>{{p.user.username}}</span> with <span>{{rating}}</span></p> -->
+
+
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="{{p.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <!--  -->
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+
+</div>
+
+</div>
+
+
+{% endblock %}
